@@ -6,4 +6,5 @@ S = FINAL(foursquare, twitter, [], [], {}, {}, H, alpha, maxiter, tol);
 
 M = greedy_match(S);
 [row, col] = find(M);
-acc = size(intersect([col row], gnd, 'rows'), 1)/size(gnd, 1);  
+acc = size(intersect([col row], gnd, 'rows'), 1)/size(gnd, 1);
+fprintf("accurancy of FINAL in foursquare-twitter: %f\n", acc);

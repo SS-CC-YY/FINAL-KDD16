@@ -1,0 +1,24 @@
+Results for ACM-DBLP-A.mat:
+top 1: 0.397
+top 10: 0.833
+top 30: 0.925
+mrr: 0.541
+
+Results for ACM-DBLP-P.mat:
+top 1: 0.193
+top 10: 0.692
+top 30: 0.832
+mrr: 0.353
+
+Results for cora.mat:
+top 1: 0.710
+top 10: 0.881
+top 30: 0.907
+mrr: 0.773
+
+Results for foursquare-twitter.mat:
+top 1: 0.051
+top 10: 0.238
+top 30: 0.342
+mrr: 0.110
+

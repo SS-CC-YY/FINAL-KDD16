@@ -97,13 +97,13 @@ end
 
 % Compute the Kronecker degree vector
 d = spconvert([n1*n2, 1, 0]);
-tic;
+%tic;
 for l = 1: L
     for k = 1: K 
         d = d + kron((E1{l} .* A1) * N1(:, k), (E2{l} .* A2) * N2(:,k));
     end
 end
-fprintf('Time for degree: %.2f sec\n', toc);
+%fprintf('Time for degree: %.2f sec\n', toc);
 D = N .* d; DD = D.^(-0.5);
 DD(D == 0) = 0;     % define inf to 0
 
@@ -112,8 +112,8 @@ q = DD .* N;
 h = H(:); s = h;
 
 for i = 1: maxiter
-    fprintf('iteration %d\n', i);
-    tic;
+    %fprintf('iteration %d\n', i);
+    %tic;
     prev = s;
     M = reshape(q.*s, n2, n1);
     S = spconvert([n2, n1, 0]);
@@ -123,10 +123,11 @@ for i = 1: maxiter
     s = (1 - alpha) * h + alpha * q .* S(:);   % add the prior part
     diff = norm(s-prev);
     
-    fprintf('Time for iteration %d: %.2f sec, diff = %.5f\n', i, toc, 100*diff);
+    %fprintf('Time for iteration %d: %.2f sec, diff = %.5f\n', i, toc, 100*diff);
     if diff < tol   % if converge
         break;
     end
 end
 
 S = reshape(s, n2, n1);   % reshape the similarity vector to a matrix
+%S = reshape(s, n1, n2);

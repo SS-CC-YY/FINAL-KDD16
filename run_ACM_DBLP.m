@@ -7,3 +7,5 @@ S = FINAL(ACM, DBLP, ACM_node_feat, DBLP_node_feat, {}, {}, H, alpha, maxiter, t
 M = greedy_match(S);
 [row, col] = find(M);
 acc = size(intersect([col row], gnd, 'rows'), 1)/size(gnd, 1);  
+
+fprintf("accurancy of FINAL-N in DBLP: %f\n", acc);
