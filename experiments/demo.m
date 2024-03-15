@@ -1,5 +1,9 @@
 %% run FINAL on ACM-DBLP-A, ACM-DBPL-P, cora, foursquare-twitter
-resultsFileName = 'results_summary.txt';
+resultsDir = 'result';
+resultsFileName = fullfile(resultsDir, 'results_summary.txt');
+if ~exist(resultsDir, 'dir')
+    mkdir(resultsDir);
+end
 fid = fopen(resultsFileName, 'wt');
 
 topK = [1,10,30]; %HIT@K
